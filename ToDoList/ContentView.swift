@@ -204,14 +204,14 @@ struct SingleCardView : View {
             
             
             if !self.editingMode {
-                Image(systemName:self.UserData.ToDoList[index].isChecked ? "checkmark.square.fill" : "square").imageScale(.large).padding(.trailing)
+                Image(systemName:self.UserData.ToDoList[index].isChecked ? "checkmark.square.fill" : "square").imageScale(.large).foregroundColor(.gray).padding(.trailing)
                               .onTapGesture {
                                   self.UserData.check(id: self.index)
                           }
             }
             else {
                 Image(systemName: self.selection.firstIndex(where: {
-                    $0 == self.index}) == nil ?"circle":"checkmark.circle.fill").imageScale(.large).padding(.trailing).onTapGesture {
+                    $0 == self.index}) == nil ?"circle":"checkmark.circle.fill").imageScale(.large).foregroundColor(.gray).padding(.trailing).onTapGesture {
                     if self.selection.firstIndex(where: {
                         $0 == self.index
                     }) == nil {
